@@ -198,6 +198,8 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Email Detection Results")
 
+    if phishing_count + legitimate_count > 0:
+
     fig, ax = plt.subplots()
 
     ax.pie(
@@ -211,6 +213,8 @@ with col1:
     st.pyplot(fig)
     plt.close(fig)
 
+else:
+    st.info("No email analysis records available yet. Analyze an email to view this chart.")
 with col2:
     st.subheader("URL Analysis Results")
 
